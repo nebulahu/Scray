@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>爱奇艺视频解析</title>
+</head>
+<style>
+    html,body{margin:0px;padding:0px;}
+    ul,li,a,span,img{margin:0em;padding:0px;}
+    li{list-style-type:none;}
+    a{text-decoration:none;color:#000;}
+    img{border:1px solid transparent;display:block;}
+    .content{max-width:1200px;margin:0 auto;overflow:hidden;}
+    .video_ul{width:100%;margin: 0 auto;overflow:hidden;}
+    .video_li{float:left;margin:10px 20px;width:200px;}
+    .video_link{display:block;text-align:center;}
+    .video_title{display:block;font-size:16px;margin:5px;}
+</style>
+<body>
+<div class="content">
+    <ul class="video_ul">
+        <volist name="videos" id="vo">
+            <li class="video_li">
+                <a class="video_link" target="_blank" href="{:U('Index/play?link='.base64_encode($vo['videosrc']))}">
+                    <img class="video_img" src="/Public/Image/Iqiyi/{$vo.src}" />
+                    <span class="video_title">{$vo.title}</span>
+                </a>
+            </li>
+        </volist>
+    </ul>
+</div>
+</body>
+</html>
